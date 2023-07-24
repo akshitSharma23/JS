@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/5a47930f18.js" crossorigin="anonymous"></script>
+<style>
+body{
+   display: flex;
+   height: 100vh;
+   align-items: center;
+   background-color: rgb(56, 37, 153);
+   justify-content: center;
+}
+.a{
+    /* border:solid; */
+    width: 1300px;
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    /* border:solid; */
+    width:300px;
+}
+.icon{
+    color:rgb(184, 184, 184);
+    font-size:105px;
+    text-align: center;
+    /* border:solid; */
+    height:115px;
+}
+.num{
+    /* font-weight: 700; */
+    color:rgb(255, 225, 0);
+    font-size:80px;
+    text-align: center;
+}
+.text{
+    font-size:30px;
+    text-align: center;
+    color:rgb(184, 184, 184);
+}
+
+</style>
+</head>
+<body>
+   <div class="a">
+    <div class="first card">
+        <div class="icon"><i class="fa-solid fa-mug-hot"></i></div>
+        <div class="num">4000</div>
+        <div class="text">Project Completed</div>
+    </div>
+    <div class="second card">
+        <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+        <div class="num">15000</div>
+        <div class="text">Our Happy Client</div>
+    </div>
+    <div class="third card">
+        <div class="icon"><i class="fa-solid fa-list-check"></i></div>
+        <div class="num">500</div>
+        <div class="text">OnGoing Projects</div>
+    </div>
+   </div> 
+</body>
+<script>
+
+    const lmt1=document.querySelector(".first .num").innerHTML;
+    const lmt2=document.querySelector(".second .num").innerHTML;
+    const lmt3=document.querySelector(".third .num").innerHTML;
+    let i=0,j=0,k=0;
+    const first=setInterval(function(){ 
+        document.querySelector(".first .num").innerHTML=`${i+=34}`;
+        if(i>lmt1){
+            clearInterval(first);
+            document.querySelector(".first .num").innerHTML=`${lmt1}`;}
+    },10);
+    const second=setInterval(function(){
+        document.querySelector(".second .num").innerHTML=`${j+=114}`;
+        if(j>lmt2)
+            {clearInterval(second);
+            document.querySelector(".second .num").innerHTML=`${lmt2}`;}
+    },10);
+    const third=setInterval(function(){
+        document.querySelector(".third .num").innerHTML=`${k+=4}`;
+        if(k>lmt3){
+            clearInterval(third);
+            document.querySelector(".third .num").innerHTML=`${lmt3}`;}
+    },10);
+    
+</script>
+</html>

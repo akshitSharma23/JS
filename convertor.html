@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:rgb(245 231 183);
+        display: flex;
+        align-content: center;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+    .a{
+        background-color: rgb(245 193 171);
+        height: 40vh;
+        width:50%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #t{
+        width:70px;
+    }
+    input{
+        border-radius: 10px;
+        border:none;
+        height: 20px;
+        width: 70px;
+        text-align: center;
+    }
+    select{
+        font-size:15px;
+        border-radius: 10px;
+        border:none;
+        width:75px;
+        text-align: center;
+    }
+    .sbt{
+        margin-top:10px;
+        background-color:black;
+        color:aliceblue;
+        text-align: center;
+    }
+    .out{
+        height:20px
+    }
+</style>
+<body>
+    <div class="a">
+        <h1 class="heading">Please enter the temprature you'd like to enter</h1>
+        <div class="input">
+            <input id="t" type="number" value="number"/>
+            <select for="t">
+                <option class="opt" name="select" value="select">Select</option>
+                <option class="opt" name="celcius" value="celcius">Celcius</option>
+                <option class="opt" name="kelvin" value="kelvin">Kelvin</option>
+            </select>
+            <br>
+            <input class="sbt" type="submit"/>
+        </div>
+        <div class="out">
+            <h3>Get temprature in Farenhite</h3>
+        </div>
+    </div>
+</body>
+<script>
+
+    document.querySelector(".sbt").addEventListener("click",function(){
+        const inp=document.querySelector("#t").value;
+        const output=document.querySelector(".out");
+        const tempInp=document.querySelector("select").selectedIndex;
+        switch (tempInp) {
+            case 1:
+                output.innerHTML=`<h3>Temprature in Farenhite is ${(inp*9/5)+32}</h3>`;
+                break;
+            case 2:
+                output.innerHTML=`<h3>Temprature in Farenhite is ${(inp-273.15)*9/5+32}</h3>`;
+                break;
+            default:
+                output.innerHTML=`<h3>Please provide proper input</h3>`;
+                break;
+        }
+    })
+    
+</script>
+</html>

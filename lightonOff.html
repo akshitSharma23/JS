@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(40,40,40);
+        }
+        .a{
+            height:370px;
+            margin-top:100px;
+            display: flex;
+            justify-content: center;
+        }
+        img{
+            width:13.75rem;
+        }
+        .btnDiv{
+            margin-top:25px;
+            display: flex;
+            justify-content: center;
+            gap:3rem;
+            border:None;
+        }
+        .btn{
+            border-radius: 10px;
+            background-color: yellow;
+            height:50px;
+            width:100px;
+        }
+    </style>
+    
+</head>
+<body>
+
+
+    <div class="a">
+        <img src="images/Screenshot 2023-07-07 at 17.39.41.png"/>
+    </div>
+    <div class="btnDiv">
+        <button class="btn" id="one">turn on light</button>
+        <button class="btn" id="two">turn off light</button>
+    </div>
+
+    
+</body>
+
+<script>
+    const img=document.querySelector("img")
+    document.querySelector("#one").addEventListener("click",function(){
+        img.setAttribute("src","images/Screenshot 2023-07-07 at 17.38.31.png");
+    });
+    document.querySelector("#two").addEventListener("click",function(){
+        img.setAttribute("src","images/Screenshot 2023-07-07 at 17.39.41.png");
+    });
+</script>
+
+</html>

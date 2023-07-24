@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            background-color: rgb(92, 92, 255);
+            height:300px;
+            width:600px;
+            margin:45vh;
+        }
+        .b{
+            position:relative;
+            top: 25px;
+            left:25px;
+            right:25px;
+            background-color: rgb(92, 255, 95);
+            height:250px;
+            width:550px;
+        }
+    </style>
+</head>
+<body>
+    <div class="a" >
+        <div class="b">
+            <p></p>
+        </div>
+    </div>
+</body>
+<script>
+    // function al(){
+    //     alert('this is class a');
+    // }
+    // function bl(){
+    //     alert('this is class b');
+    // }
+    document.querySelector(".a").addEventListener("click",function(){
+        alert("this is class a");
+    },true);
+    document.querySelector(".b").addEventListener("click",function(){
+        alert("this is class b");
+        // event.stopPropagation();
+    },true);
+</script>
+</html>

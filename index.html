@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(13, 13, 99);
+            color:white;
+        }
+        div{
+            height:25vh;
+        }
+        p{
+            text-align: center;
+            color:white;
+            font-size: 2rem;
+        }
+        .btn-div{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn{
+            border:None;
+            background-color: rgb(255, 255, 2);
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="child-one">
+        <p>i am child one</p>
+    </div>
+    <div class="child-two">
+        <p>i am child two</p>
+    </div>
+    <div class="child-three">
+        <p>i am child three</p>
+    </div>
+    <div class="btn-div">
+        <button class="btn" onclick=func()>click me </button>
+    </div>
+</body>
+<script>
+function func(){
+    let x=document.querySelector(".child-three").firstElementChild;
+    x.innerHTML="hello there i am akshit sharma";
+}
+
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/5a47930f18.js" crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            background-color: rgb(132, 0, 255);
+            color:white;
+        }
+        h1{
+            font-size: 170px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>I am Thermomerter
+    <i class="fa-regular fa-temperature-empty" style="color: #77bb41;"></i>
+    </h1>
+</body>
+<script>
+    let arr=["fa-temperature-quarter","fa-temperature-half","fa-temperature-three-quarters","fa-temperature-full","fa-temperature-empty"];
+    let colour=["#d9eb37","#ffaa00","#ff6a00","#ff4013","#77bb41"]
+    let i=0,prev=4;
+    setInterval(()=>{
+            i%=5;
+            const ele=document.querySelector(".fa-regular");
+            ele.classList.remove(arr[prev]);
+            ele.style.color=`${colour[i]}`;
+            ele.classList.add(arr[i]);
+
+            prev=i;
+            i++;
+    },1000);
+
+    // setInterval(()=>{
+    //     document.querySelector("body").style.backgroundColor="red";
+    // },1000);
+    // document.querySelector("body").style.backgroundColor="black";
+
+    // const ele=document.querySelector(".fa-regular");
+    // const val=ele.classList[1];
+    // console.log(val);
+</script>
+</html>
+

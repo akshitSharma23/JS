@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(51, 164, 164);
+    }
+    .a {
+      height: 350px;
+      width: 700px;
+      background-color: rgb(219, 219, 219);
+      margin: auto;
+      margin-top: 220px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 15px;
+      color: rgb(67, 67, 67);
+      padding: 5px;
+    }
+    .jokes {
+      /* background-color: bisque; */
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: center;
+      font-size: 30px;
+    }
+    .btn {
+      margin: auto;
+    }
+    button {
+      background-color: yellow;
+      font-size: 30px;
+      border-radius: 10px;
+      border: none;
+      color: rgb(85, 84, 84);
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="a">
+        <h1>Your awesom jokes are here !!</h1>
+        <div class="jokes">
+          <p class="jokes_text">Jokes are loading ...</p>
+        </div>
+        <button class="btn" type="button" name="Next" value="Next">
+          Next Joke
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    // const func = () => {
+    //   const promiss = fetch("https://api.chucknorris.io/jokes/random");
+    //   promiss
+    //     .then((res) => {
+    //       return res.json();
+    //     })
+    //     .then((data) => {
+    //       document.querySelector(".jokes_text").innerHTML = `${data.value}`;
+    //       console.log(data.value);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // };
+
+    const generateJokes=async ()=>{
+      try{
+        const promiss= await fetch("https://api.chucknorris.io/jokes/random");
+        const res=await promiss.json();
+        console.log(res.value);
+        document.querySelector(".jokes_text").innerHTML=`${res.value}`
+      }
+  catch(err){
+    console.log(err);
+  }
+}
+
+    document.querySelector(".btn").addEventListener("click", generateJokes);
+    generateJokes();
+
+    // api= https://api.chucknorris.io/jokes/random
+  </script>
+</html>
